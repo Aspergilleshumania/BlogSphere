@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+    <div class="row w-100 d-flex justify-content-center">
+        <div class="col-md-6 p-4" style="border-radius: 10px; width: 100%; max-width: 500px; margin-top: -50px; margin-left:250px;">
+            <h3 class="text-center mb-4 text-dark">New Post</h3>
+            {% include 'includes/errors.html' %}
+
+            <form method="post" enctype="multipart/form-data" class="text-center">
+                {% csrf_token %}
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control border-dark text-dark" id="title" name="title" placeholder="Title" value="">
+                    <label for="title" class="text-dark">Title</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control border-dark text-dark" id="content" name="content" placeholder="Content"></textarea>
+                    <label for="content" class="text-dark">Content</label>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label text-dark">Image</label>
+                    <input type="file" class="form-control border-dark text-dark" name="img_url" id="image">
+                </div>
+                <div class="mb-3">
+                    <label for="category" class="form-label text-dark">Category</label>
+                    <select class="form-control border-dark text-dark" id="category" name="category">
+                        <option value="">Select</option>
+                        {% if categories %}
+                        {% for category in categories %}
+                        <option value="{{category.id}}">{{category.name}}</option>
+                        {% endfor %}
+                        {% endif %}
+                    </select>
+                </div>
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary w-100">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

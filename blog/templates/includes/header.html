@@ -1,0 +1,28 @@
+{% load static %}
+<header class="p-3 bg-dark text-white">
+    <div class="container header-container">
+        <!-- Blog title aligned left -->
+        <a class="blog-title text-light text-decoration-none" href="/">
+            <h3>Blog</h3>
+        </a>
+
+        <!-- Navigation links centered -->
+        <nav class="nav-links">
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link text-light" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="/about">About</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="/contact">Contact</a></li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link text-light" href="{% url 'blog:dashboard' %}">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="{% url 'blog:logout' %}">Logout</a></li>
+                {% else %}
+                    <li class="nav-item"><a class="nav-link text-light" href="{% url 'blog:register' %}">Register</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="{% url 'blog:login' %}">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        <a href="#" class="logo">
+            <img src="{% static 'blog/images/logo.png' %}" alt="Blog Logo" class="logo-img">
+        </a>
+    </div>
+</header>

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+    <div class="row w-100 d-flex justify-content-center">
+        <div class="col-md-6 p-4" style="border-radius: 10px; width: 100%; max-width: 500px; margin-top: -50px; margin-left:250px;">
+            <h3 class="text-center mb-4 text-dark">Contact Form</h3>
+            {% for field in form %}
+                {% if field.errors %}
+                <div class="col-12 text-center">
+                    <span class="fw-bold text-dark">{{ field.label_tag }}</span>
+                    {% for error in field.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            {% endfor %}
+
+            {% if success_message %}
+            <div class="alert alert-success text-center" role="alert">
+                {{ success_message }}
+            </div>
+            {% endif %}
+
+            <form method="post" class="text-center">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input type="text" class="form-control border-dark text-dark" id="name" name="name" placeholder="Name" value="{{ name|default:'' }}">
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control border-dark text-dark" id="email" name="email" placeholder="Email" value="{{ email|default:'' }}">
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control border-dark text-dark" id="message" name="message" placeholder="Message" rows="4">{{ message|default:'' }}</textarea>
+                </div>
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

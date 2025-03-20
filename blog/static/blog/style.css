@@ -1,0 +1,108 @@
+
+/* Ensure full height and flexbox layout */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make the content take up available space */
+.content {
+    flex: 1;
+}
+
+/* Ensure footer sticks to the bottom */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+}
+
+
+.container {
+    width: 100%; /* Makes the container take full width */
+    margin: 0; /* Removes any margin */
+    padding: 0 10px; /* Optional: Small padding to prevent content touching edges */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Ensures posts are evenly spaced */
+}
+
+
+.posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust spacing between posts */
+}
+
+.new-post-button {
+    align-self: flex-start;
+    margin-left: auto; /* Pushes the button to align with the rightmost post */
+}
+
+
+.my-posts-heading {
+    text-align: center;
+    margin-bottom: 20px; /* Add space between heading and posts */
+    font-size: 1.8rem; /* Slightly larger text */
+    font-weight:{
+        --slds-c-button-brand-color-background: orangered;
+        --slds-c-button-brand-color-background-hover: rgb(186, 50, 0);
+        --slds-c-button-brand-color-border: orangered;
+        --slds-c-button-brand-color-border-hover: rgb(186, 50, 0);
+        --slds-c-button-brand-text-color: #fff;
+    };
+}
+
+
+nav {
+    display: flex;
+    justify-content: center; /* Center the nav links */
+    align-items: center;
+    padding: 15px;
+    position:relative;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Adjust spacing between links */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+.nav-links {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Ensures spacing between elements */
+    align-items: center;
+    width: 100%;
+}
+
+
+/* Aligns the logo to the right */
+.logo {
+    position: absolute;
+    right: 20px; /* Adjust as needed */
+}
+
+.logo-img{
+    height: 70px;
+}
+
