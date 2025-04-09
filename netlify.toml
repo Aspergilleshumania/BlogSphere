@@ -1,6 +1,7 @@
 [build]
   command = """
-    sudo apt-get update && sudo apt-get install -y libmysqlclient-dev
+    sudo apt-get update && sudo apt-get install -y libmysqlclient-dev pkg-config
+    export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig"
     export CFLAGS="$CFLAGS -I/usr/include/mysql"
     export LDFLAGS="$LDFLAGS -L/usr/lib/mysql"
     pip install -r requirements.txt
@@ -8,4 +9,6 @@
   publish = "staticfiles" # Replace with your actual publish directory
 
 [build.environment]
-  PYTHON_VERSION = "3.13" # Replace "your_python_version" with "3.13" or your desired version
+  PYTHON_VERSION = "3.13" # Or your desired Python version
+  MYSQLCLIENT_CFLAGS = "-I/usr/include/mysql"
+  MYSQLCLIENT_LDFLAGS = "-L/usr/lib/mysql"
