@@ -8,7 +8,7 @@
     rustup default stable # Set the default Rust toolchain
     pip install -r requirements.txt
   """
-  publish = "your_publish_directory" # Replace with your actual publish directory
+  publish = "staticfiles" # Replace with your actual publish directory
 
 [build.environment]
   PYTHON_VERSION = "3.13" # Or your desired Python version
