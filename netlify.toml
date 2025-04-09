@@ -4,9 +4,10 @@
     export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig"
     export CFLAGS="$CFLAGS -I/usr/include/mysql"
     export LDFLAGS="$LDFLAGS -L/usr/lib/mysql"
+    export PATH="$PATH:/root/.cargo/bin" # Add Cargo to PATH
     pip install -r requirements.txt
   """
-  publish = "your_publish_directory" # Replace with your actual publish directory
+  publish = "staticfiles" # Replace with your actual publish directory
 
 [build.environment]
   PYTHON_VERSION = "3.13" # Or your desired Python version
