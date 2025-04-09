@@ -4,6 +4,7 @@
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
     export CARGO_HOME="$HOME/.cargo"
     export PATH="$PATH:$CARGO_HOME/bin"
+    rustup toolchain install stable
     rustup default stable
     export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig"
     export CFLAGS="$CFLAGS -I/usr/include/mysql"
