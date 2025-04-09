@@ -1,14 +1,15 @@
 [build]
   command = """
-    sudo apt-get update && sudo apt-get install -y libmysqlclient-dev pkg-config rustc cargo
+    sudo apt-get update && sudo apt-get install -y libmysqlclient-dev pkg-config curl
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
     export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig"
     export CFLAGS="$CFLAGS -I/usr/include/mysql"
     export LDFLAGS="$LDFLAGS -L/usr/lib/mysql"
     export PATH="$PATH:/root/.cargo/bin"
-    rustup default stable # Set the default Rust toolchain
+    rustup default stable
     pip install -r requirements.txt
   """
-  publish = "staticfiles" # Replace with your actual publish directory
+  publish = "your_publish_directory" # Replace with your actual publish directory
 
 [build.environment]
   PYTHON_VERSION = "3.13" # Or your desired Python version
