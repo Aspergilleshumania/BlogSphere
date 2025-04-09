@@ -5,9 +5,7 @@
     export LDFLAGS="$LDFLAGS -L/usr/lib/mysql"
     pip install -r requirements.txt
   """
-  publish = "your_publish_directory" # Replace with your actual publish directory
+  publish = "staticfiles" # Replace with your actual publish directory
 
 [build.environment]
-  PYTHON_VERSION = "your_python_version" # Replace with your desired Python version
-  MYSQLCLIENT_CFLAGS = "-I/usr/include/mysql"
-  MYSQLCLIENT_LDFLAGS = "-L/usr/lib/mysql"
+  PYTHON_VERSION = "3.13" # Replace "your_python_version" with "3.13" or your desired version
