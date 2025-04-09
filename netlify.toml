@@ -1,0 +1,9 @@
+[build]
+  command = """
+    sudo apt-get update && sudo apt-get install -y libmysqlclient-dev
+    pip install -r requirements.txt
+  """
+  publish = "your_publish_directory" # Replace with your actual publish directory
+
+[build.environment]
+  PYTHON_VERSION = "3.13" # Or your desired Python version
