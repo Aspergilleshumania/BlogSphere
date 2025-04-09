@@ -6,6 +6,7 @@
     export PATH="$PATH:$CARGO_HOME/bin"
     rustup toolchain install stable
     rustup default stable
+    source "$CARGO_HOME/env" # Explicitly source the cargo environment
     export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig"
     export CFLAGS="$CFLAGS -I/usr/include/mysql"
     export LDFLAGS="$LDFLAGS -L/usr/lib/mysql"
