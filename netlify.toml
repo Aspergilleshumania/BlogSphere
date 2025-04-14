@@ -1,5 +1,4 @@
 [build]
-[build]
   command = """
     sudo apt-get update && sudo apt-get install -y libmysqlclient-dev pkg-config curl
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -8,13 +7,12 @@
     rustup toolchain install stable
     rustup default stable
     source "$CARGO_HOME/env"
-
-    # Install orjson specifically before the rest of the requirements
     pip install orjson==3.8.0
-
     export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig"
-    export MYSQLCLIENT_CFLAGS="-I/usr/include/mysql"
-    export MYSQLCLIENT_LDFLAGS="-L/usr/lib/mysql"
     pip install -r requirements.txt
   """
   publish = "staticfiles"
+
+[build.environment]
+  MYSQLCLIENT_CFLAGS = "-I/usr/include/mysql"
+  MYSQLCLIENT_LDFLAGS = "-L/usr/lib/mysql"
