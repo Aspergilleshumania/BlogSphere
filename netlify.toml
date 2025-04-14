@@ -8,8 +8,8 @@
     rustup default stable
     source "$CARGO_HOME/env"
     export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig"
-    export CFLAGS="-I/usr/include/mysql" # Explicitly set CFLAGS
-    export LDFLAGS="-L/usr/lib/mysql" # Explicitly set LDFLAGS
+    export MYSQLCLIENT_CFLAGS="-I/usr/include/mysql" # Explicitly set MYSQLCLIENT_CFLAGS
+    export MYSQLCLIENT_LDFLAGS="-L/usr/lib/mysql" # Explicitly set MYSQLCLIENT_LDFLAGS
     pip install -r requirements.txt
   """
   publish = "staticfiles"
