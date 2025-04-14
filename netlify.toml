@@ -12,8 +12,9 @@
     pip install orjson==3.8.0
 
     export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig"
-    export MYSQLCLIENT_CFLAGS="-I/usr/include/mysql"
-    export MYSQLCLIENT_LDFLAGS="-L/usr/lib/mysql"
     pip install -r requirements.txt
   """
   publish = "staticfiles"
+  [build.environment]
+  MYSQLCLIENT_CFLAGS = "-I/usr/include/mysql"
+  MYSQLCLIENT_LDFLAGS = "-L/usr/lib/mysql"
