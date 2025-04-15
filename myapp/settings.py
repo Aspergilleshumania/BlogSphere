@@ -87,9 +87,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': os.environ.get('MYSQL_DATABASE', 'mysql'),  # Replace default if needed
         'USER': os.environ.get('MYSQL_USER', 'root'),      # Replace default if needed
-        'PASSWORD': os.environ.get('MYSQL_PASSWORD', 'Kaush@2401'), # Replace default if needed
+        'PASSWORD': os.environ.get('MYSQL_PASSWORD', 'root@123'), # Replace default if needed
         'HOST': os.environ.get('MYSQL_HOST', 'localhost'),              # Replace with your Codespace MySQL host
-                       # Replace with your Codespace MySQL port
+                                                                        # Replace with your Codespace MySQL port
         'OPTIONS': {'unix_socket': '/var/run/mysqld/mysqld.sock',},  # Ensure this does not contain 'unix_socket'
     }
 }
