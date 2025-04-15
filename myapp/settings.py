@@ -80,17 +80,19 @@ WSGI_APPLICATION = "myapp.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": 'blog',
-        "USER": 'root',
-        "PASSWORD": 'Kaush@2401',
-        "HOST": 'localhost',
-        "PORT": '3306',
-}
-}
+import os
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ.get('MYSQL_DATABASE', 'mysql'),  # Replace default if needed
+        'USER': os.environ.get('MYSQL_USER', 'root'),      # Replace default if needed
+        'PASSWORD': os.environ.get('MYSQL_PASSWORD', 'Kaush@2401'), # Replace default if needed
+        'HOST': os.environ.get('MYSQL_HOST', 'localhost'),              # Replace with your Codespace MySQL host
+                       # Replace with your Codespace MySQL port
+        'OPTIONS': {'unix_socket': '/var/run/mysqld/mysqld.sock',},  # Ensure this does not contain 'unix_socket'
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
