@@ -82,17 +82,15 @@ WSGI_APPLICATION = "myapp.wsgi.application"
 
 import os
 
-import os
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': os.environ.get('MYSQL_DATABASE', 'mysql'),
         'USER': os.environ.get('MYSQL_USER', 'root'),
         'PASSWORD': os.environ.get('MYSQL_PASSWORD', 'password123'),
-        'HOST': '127.0.0.1',
-        'PORT': '3306',  # Ensure this is set (default MySQL port)
+        'HOST': 'localhost',  # Or you can leave it blank
         'OPTIONS': {
+            'unix_socket': '/var/run/mysqld/mysqld.sock',
             'auth_plugin': 'mysql_native_password',
         },
     }
