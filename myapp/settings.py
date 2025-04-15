@@ -85,9 +85,9 @@ import os
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('MYSQL_DATABASE', 'mysql'),
+        'NAME': os.environ.get('MYSQL_DATABASE', 'blog'),
         'USER': os.environ.get('MYSQL_USER', 'root'),
-        'PASSWORD': os.environ.get('MYSQL_PASSWORD', 'password123'),
+        'PASSWORD': os.environ.get('MYSQL_PASSWORD', 'Kaush@2401'),
         'HOST': 'localhost',  # Or you can leave it blank
         'OPTIONS': {
             'unix_socket': '/var/run/mysqld/mysqld.sock',
